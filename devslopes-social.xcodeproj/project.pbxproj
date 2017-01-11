@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F7002AA1E25E06E00974508 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002A91E25E06E00974508 /* SignInHeaderView.swift */; };
+		5F7002AD1E25E11A00974508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002AC1E25E11A00974508 /* Constants.swift */; };
+		5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002AE1E25E4C800974508 /* RoundButton.swift */; };
+		5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002B01E25E7FD00974508 /* SignInTextFields.swift */; };
+		5F7002B31E25E8DF00974508 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002B21E25E8DF00974508 /* SignInButton.swift */; };
 		5FBCA2A81E25CA5900DACC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCA2A71E25CA5900DACC37 /* AppDelegate.swift */; };
 		5FBCA2AA1E25CA5900DACC37 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCA2A91E25CA5900DACC37 /* SignInVC.swift */; };
 		5FBCA2AD1E25CA5900DACC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2AB1E25CA5900DACC37 /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		19C6AA5621A39E6329E31896 /* Pods_devslopes_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281528CE465C59B095761B97 /* Pods-devslopes-social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.debug.xcconfig"; sourceTree = "<group>"; };
+		5F7002A91E25E06E00974508 /* SignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		5F7002AC1E25E11A00974508 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5F7002AE1E25E4C800974508 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		5F7002B01E25E7FD00974508 /* SignInTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInTextFields.swift; sourceTree = "<group>"; };
+		5F7002B21E25E8DF00974508 /* SignInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		5FBCA2A41E25CA5900DACC37 /* devslopes-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devslopes-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBCA2A71E25CA5900DACC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FBCA2A91E25CA5900DACC37 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -51,6 +61,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5F7002AB1E25E10700974508 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5F7002AC1E25E11A00974508 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		5FBCA29B1E25CA5900DACC37 = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +90,10 @@
 		5FBCA2A61E25CA5900DACC37 /* devslopes-social */ = {
 			isa = PBXGroup;
 			children = (
-				5FFE16E51E25CC8C00C8DEB8 /* Controller */,
-				5FFE16E41E25CC8900C8DEB8 /* View */,
 				5FFE16E31E25CC8300C8DEB8 /* Model */,
+				5FFE16E41E25CC8900C8DEB8 /* View */,
+				5FFE16E51E25CC8C00C8DEB8 /* Controller */,
+				5F7002AB1E25E10700974508 /* Util */,
 				5FBCA2A71E25CA5900DACC37 /* AppDelegate.swift */,
 				5FBCA2AB1E25CA5900DACC37 /* Main.storyboard */,
 				5FBCA2AE1E25CA5900DACC37 /* Assets.xcassets */,
@@ -95,6 +114,10 @@
 		5FFE16E41E25CC8900C8DEB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F7002A91E25E06E00974508 /* SignInHeaderView.swift */,
+				5F7002AE1E25E4C800974508 /* RoundButton.swift */,
+				5F7002B01E25E7FD00974508 /* SignInTextFields.swift */,
+				5F7002B21E25E8DF00974508 /* SignInButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -240,8 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7002B31E25E8DF00974508 /* SignInButton.swift in Sources */,
 				5FBCA2AA1E25CA5900DACC37 /* SignInVC.swift in Sources */,
+				5F7002AA1E25E06E00974508 /* SignInHeaderView.swift in Sources */,
+				5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */,
+				5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */,
 				5FBCA2A81E25CA5900DACC37 /* AppDelegate.swift in Sources */,
+				5F7002AD1E25E11A00974508 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
