@@ -12,12 +12,12 @@
 		5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002AE1E25E4C800974508 /* RoundButton.swift */; };
 		5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002B01E25E7FD00974508 /* SignInTextFields.swift */; };
 		5F7002B31E25E8DF00974508 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002B21E25E8DF00974508 /* SignInButton.swift */; };
+		5FBBB32D1E25F47E0082137E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FBBB32C1E25F47E0082137E /* GoogleService-Info.plist */; };
 		5FBCA2A81E25CA5900DACC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCA2A71E25CA5900DACC37 /* AppDelegate.swift */; };
 		5FBCA2AA1E25CA5900DACC37 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCA2A91E25CA5900DACC37 /* SignInVC.swift */; };
 		5FBCA2AD1E25CA5900DACC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2AB1E25CA5900DACC37 /* Main.storyboard */; };
 		5FBCA2AF1E25CA5900DACC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2AE1E25CA5900DACC37 /* Assets.xcassets */; };
 		5FBCA2B21E25CA5900DACC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2B01E25CA5900DACC37 /* LaunchScreen.storyboard */; };
-		5FBCA2BA1E25CAA800DACC37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2B91E25CAA800DACC37 /* GoogleService-Info.plist */; };
 		8C4D7CD4CC7666D0303E4CC6 /* Pods_devslopes_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6AA5621A39E6329E31896 /* Pods_devslopes_social.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +29,8 @@
 		5F7002AE1E25E4C800974508 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		5F7002B01E25E7FD00974508 /* SignInTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInTextFields.swift; sourceTree = "<group>"; };
 		5F7002B21E25E8DF00974508 /* SignInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		5FBBB32B1E25F29E0082137E /* devslopes-social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "devslopes-social.entitlements"; sourceTree = "<group>"; };
+		5FBBB32C1E25F47E0082137E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FBCA2A41E25CA5900DACC37 /* devslopes-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devslopes-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBCA2A71E25CA5900DACC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FBCA2A91E25CA5900DACC37 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -36,7 +38,6 @@
 		5FBCA2AE1E25CA5900DACC37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FBCA2B11E25CA5900DACC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FBCA2B31E25CA5900DACC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FBCA2B91E25CAA800DACC37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD08016D0636DD02FCD715DD /* Pods-devslopes-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 		5FBCA2A61E25CA5900DACC37 /* devslopes-social */ = {
 			isa = PBXGroup;
 			children = (
+				5FBBB32B1E25F29E0082137E /* devslopes-social.entitlements */,
 				5FFE16E31E25CC8300C8DEB8 /* Model */,
 				5FFE16E41E25CC8900C8DEB8 /* View */,
 				5FFE16E51E25CC8C00C8DEB8 /* Controller */,
@@ -99,7 +101,7 @@
 				5FBCA2AE1E25CA5900DACC37 /* Assets.xcassets */,
 				5FBCA2B01E25CA5900DACC37 /* LaunchScreen.storyboard */,
 				5FBCA2B31E25CA5900DACC37 /* Info.plist */,
-				5FBCA2B91E25CAA800DACC37 /* GoogleService-Info.plist */,
+				5FBBB32C1E25F47E0082137E /* GoogleService-Info.plist */,
 			);
 			path = "devslopes-social";
 			sourceTree = "<group>";
@@ -175,6 +177,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = D58DW9D5G8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -202,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBCA2B21E25CA5900DACC37 /* LaunchScreen.storyboard in Resources */,
-				5FBCA2BA1E25CAA800DACC37 /* GoogleService-Info.plist in Resources */,
+				5FBBB32D1E25F47E0082137E /* GoogleService-Info.plist in Resources */,
 				5FBCA2AF1E25CA5900DACC37 /* Assets.xcassets in Resources */,
 				5FBCA2AD1E25CA5900DACC37 /* Main.storyboard in Resources */,
 			);
@@ -393,7 +400,12 @@
 			baseConfigurationReference = 281528CE465C59B095761B97 /* Pods-devslopes-social.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "devslopes-social/devslopes-social.entitlements";
 				DEVELOPMENT_TEAM = D58DW9D5G8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "devslopes-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeakian.devslopes-social";
@@ -407,7 +419,12 @@
 			baseConfigurationReference = AD08016D0636DD02FCD715DD /* Pods-devslopes-social.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "devslopes-social/devslopes-social.entitlements";
 				DEVELOPMENT_TEAM = D58DW9D5G8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "devslopes-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeakian.devslopes-social";
