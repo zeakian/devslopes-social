@@ -9,3 +9,4 @@
 import UIKit
 
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0 // color used for shadows throughout app
+let KEY_UID = "uid" // user id for auth
