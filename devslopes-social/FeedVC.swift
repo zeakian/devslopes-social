@@ -19,6 +19,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Grab posts data (runs initially, and automatically triggered whenever posts database is updated)
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            print("JDH: \(snapshot.value)")
+        }
     }
 
     // Table view methods
@@ -27,11 +32,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell {
+            return cell
+        }
+        
+        return UITableViewCell()
     }
 
-    @IBAction func signOutButtonTapped(_ sender: UIButton) {
+    @IBAction func signOutImageTapped() {
         // Remove login details from keychain
         if let removeSuccessful: Bool = KeychainWrapper.standard.remove(key: KEY_UID) {
             print("Removed login details from keychain? \(removeSuccessful)")

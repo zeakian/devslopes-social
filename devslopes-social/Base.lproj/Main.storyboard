@@ -92,13 +92,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="37"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVV-Jc-6sj" customClass="SignInTextFields" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="52" width="283" height="37"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJv-dq-6Gu" customClass="SignInButton" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104" width="283" height="37"/>
@@ -158,23 +158,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNI-g8-PSk">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="signOutButtonTapped:" destination="s4j-14-bFv" eventType="touchUpInside" id="2Zm-xj-hbL"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmI-BD-2fx" customClass="ShadowView" customModule="devslopes_social" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="xz2-j0-Dna">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="xz2-j0-Dna">
                                         <rect key="frame" x="16" y="19" width="45" height="38"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="1Ma-ru-hIZ"/>
                                             <constraint firstAttribute="height" constant="38" id="KMH-Wy-ZHG"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="RUE-zZ-XCQ" appends="YES" id="omn-Es-q4F"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXP-vl-u6O">
                                         <rect key="frame" x="158.5" y="20" width="59.5" height="36"/>
@@ -233,11 +229,11 @@
                                     <constraint firstAttribute="height" constant="65" id="qpp-eP-C4I"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="351" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9F-Jd-QbS">
-                                <rect key="frame" x="0.0" y="162" width="375" height="505"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="351" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9F-Jd-QbS">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="351" id="h6L-Hv-X2R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="351" id="h6L-Hv-X2R" customClass="PostCell" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="351"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6L-Hv-X2R" id="5n5-QW-sgs">
@@ -245,15 +241,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-Om-bTR" customClass="ShadowView" customModule="devslopes_social" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="16" width="343" height="319"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="335"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DKX-fJ-d0f">
-                                                            <rect key="frame" x="5" y="5" width="333" height="289"/>
+                                                            <rect key="frame" x="5" y="5" width="333" height="305"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="80b-LS-bPB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="y9t-jn-0fi">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="y9t-jn-0fi" customClass="RoundImageView" customModule="devslopes_social" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="60" id="Grb-Oy-tfi"/>
@@ -276,19 +272,22 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="rHF-Qo-6re">
-                                                                    <rect key="frame" x="0.0" y="70" width="333" height="144"/>
+                                                                    <rect key="frame" x="0.0" y="70" width="333" height="175"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-X5-6jZ">
-                                                                    <rect key="frame" x="0.0" y="224" width="333" height="65"/>
+                                                                    <rect key="frame" x="0.0" y="255" width="333" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Fr4-yd-ZEN"/>
+                                                                    </constraints>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-qw-STJ">
-                                                            <rect key="frame" x="270.5" y="299" width="67.5" height="15"/>
+                                                            <rect key="frame" x="270.5" y="315" width="67.5" height="15"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJP-kV-zez">
                                                                     <rect key="frame" x="0.0" y="0.0" width="31" height="15"/>
@@ -317,13 +316,21 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="KT9-Om-bTR" firstAttribute="top" secondItem="5n5-QW-sgs" secondAttribute="topMargin" constant="8" id="Myt-8U-hBy"/>
+                                                <constraint firstItem="KT9-Om-bTR" firstAttribute="top" secondItem="5n5-QW-sgs" secondAttribute="topMargin" id="Myt-8U-hBy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KT9-Om-bTR" secondAttribute="trailing" constant="8" id="NxO-ne-Cla"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KT9-Om-bTR" secondAttribute="bottom" constant="8" id="qL3-wl-Oqa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KT9-Om-bTR" secondAttribute="bottom" id="qL3-wl-Oqa"/>
                                                 <constraint firstItem="KT9-Om-bTR" firstAttribute="leading" secondItem="5n5-QW-sgs" secondAttribute="leadingMargin" constant="8" id="s2v-Wi-wLX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionTextView" destination="AE2-X5-6jZ" id="CBC-i0-Dzl"/>
+                                            <outlet property="likesLabel" destination="1HU-LL-qrn" id="ndu-Xh-wZ7"/>
+                                            <outlet property="postImageView" destination="rHF-Qo-6re" id="aI4-kA-Mrd"/>
+                                            <outlet property="profileImageView" destination="y9t-jn-0fi" id="feQ-Pr-mfI"/>
+                                            <outlet property="usernameLabel" destination="tiP-po-CNr" id="V0T-tG-Ggd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -338,7 +345,7 @@
                             <constraint firstItem="nmI-BD-2fx" firstAttribute="leading" secondItem="ob3-ij-pJZ" secondAttribute="leading" id="Qcj-mj-mcM"/>
                             <constraint firstItem="pDn-sU-Khq" firstAttribute="top" secondItem="nmI-BD-2fx" secondAttribute="bottom" constant="16" id="kar-N7-Rtg"/>
                             <constraint firstAttribute="trailing" secondItem="nmI-BD-2fx" secondAttribute="trailing" id="w0a-Yx-Yoh"/>
-                            <constraint firstItem="w9F-Jd-QbS" firstAttribute="top" secondItem="pDn-sU-Khq" secondAttribute="bottom" constant="16" id="y7C-Cy-h6P"/>
+                            <constraint firstItem="w9F-Jd-QbS" firstAttribute="top" secondItem="pDn-sU-Khq" secondAttribute="bottom" constant="4" id="y7C-Cy-h6P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pDn-sU-Khq" secondAttribute="trailing" id="ylt-xq-Xo5"/>
                         </constraints>
                     </view>
@@ -348,6 +355,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NY5-HZ-5AB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RUE-zZ-XCQ">
+                    <connections>
+                        <action selector="signOutImageTapped" destination="s4j-14-bFv" id="swc-yP-i6c"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="576.79999999999995" y="225.33733133433284"/>
         </scene>

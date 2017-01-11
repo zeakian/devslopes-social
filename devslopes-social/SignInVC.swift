@@ -54,7 +54,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("JDH: Email user authenticated with Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     // If error (user doesn't exist) then create new account
@@ -64,7 +65,8 @@ class SignInVC: UIViewController {
                         } else {
                             print("JDH: Successfully created email user  with Firebase")
                             if let user = user {
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                             }
                         }
                     })
@@ -81,13 +83,17 @@ class SignInVC: UIViewController {
             } else {
                 print("JDH: Successfully authenticated Facebook user with Firebase")
                 if let user = user { // if Firebase user exists and is returned successfully
-                    self.completeSignIn(id: user.uid) // store ID in keychain after signing in
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        // Create user in database if doesn't exist
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        
         // Store login details in keychain so user doesn't have to re-auth everytime he opens app
         let saveSuccessful: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("JDH: Saved login details to keychain? \(saveSuccessful)")

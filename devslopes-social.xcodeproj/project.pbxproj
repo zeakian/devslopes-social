@@ -20,6 +20,8 @@
 		5FBCA2B21E25CA5900DACC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2B01E25CA5900DACC37 /* LaunchScreen.storyboard */; };
 		5FC866011E26B22000385330 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866001E26B22000385330 /* FeedVC.swift */; };
 		5FC866031E26C6BB00385330 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866021E26C6BB00385330 /* RoundImageView.swift */; };
+		5FC866051E26CF8D00385330 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866041E26CF8D00385330 /* PostCell.swift */; };
+		5FC866081E26D89C00385330 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866071E26D89C00385330 /* DataService.swift */; };
 		8C4D7CD4CC7666D0303E4CC6 /* Pods_devslopes_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6AA5621A39E6329E31896 /* Pods_devslopes_social.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		5FBCA2B31E25CA5900DACC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC866001E26B22000385330 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		5FC866021E26C6BB00385330 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		5FC866041E26CF8D00385330 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		5FC866071E26D89C00385330 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AD08016D0636DD02FCD715DD /* Pods-devslopes-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 		5FBCA2A61E25CA5900DACC37 /* devslopes-social */ = {
 			isa = PBXGroup;
 			children = (
+				5FC866061E26D88B00385330 /* Services */,
 				5FBBB32B1E25F29E0082137E /* devslopes-social.entitlements */,
 				5FFE16E31E25CC8300C8DEB8 /* Model */,
 				5FFE16E41E25CC8900C8DEB8 /* View */,
@@ -108,6 +113,14 @@
 				5FBBB32C1E25F47E0082137E /* GoogleService-Info.plist */,
 			);
 			path = "devslopes-social";
+			sourceTree = "<group>";
+		};
+		5FC866061E26D88B00385330 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5FC866071E26D89C00385330 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		5FFE16E31E25CC8300C8DEB8 /* Model */ = {
@@ -125,6 +138,7 @@
 				5F7002B01E25E7FD00974508 /* SignInTextFields.swift */,
 				5F7002B21E25E8DF00974508 /* SignInButton.swift */,
 				5FC866021E26C6BB00385330 /* RoundImageView.swift */,
+				5FC866041E26CF8D00385330 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -281,10 +295,12 @@
 				5FBCA2AA1E25CA5900DACC37 /* SignInVC.swift in Sources */,
 				5F7002AA1E25E06E00974508 /* ShadowView.swift in Sources */,
 				5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */,
+				5FC866081E26D89C00385330 /* DataService.swift in Sources */,
 				5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */,
 				5FBCA2A81E25CA5900DACC37 /* AppDelegate.swift in Sources */,
 				5F7002AD1E25E11A00974508 /* Constants.swift in Sources */,
 				5FC866031E26C6BB00385330 /* RoundImageView.swift in Sources */,
+				5FC866051E26CF8D00385330 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
