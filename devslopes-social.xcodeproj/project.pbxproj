@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F7002AA1E25E06E00974508 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002A91E25E06E00974508 /* SignInHeaderView.swift */; };
+		5F7002AA1E25E06E00974508 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002A91E25E06E00974508 /* ShadowView.swift */; };
 		5F7002AD1E25E11A00974508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002AC1E25E11A00974508 /* Constants.swift */; };
 		5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002AE1E25E4C800974508 /* RoundButton.swift */; };
 		5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7002B01E25E7FD00974508 /* SignInTextFields.swift */; };
@@ -19,13 +19,14 @@
 		5FBCA2AF1E25CA5900DACC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2AE1E25CA5900DACC37 /* Assets.xcassets */; };
 		5FBCA2B21E25CA5900DACC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCA2B01E25CA5900DACC37 /* LaunchScreen.storyboard */; };
 		5FC866011E26B22000385330 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866001E26B22000385330 /* FeedVC.swift */; };
+		5FC866031E26C6BB00385330 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC866021E26C6BB00385330 /* RoundImageView.swift */; };
 		8C4D7CD4CC7666D0303E4CC6 /* Pods_devslopes_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6AA5621A39E6329E31896 /* Pods_devslopes_social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19C6AA5621A39E6329E31896 /* Pods_devslopes_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281528CE465C59B095761B97 /* Pods-devslopes-social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.debug.xcconfig"; sourceTree = "<group>"; };
-		5F7002A91E25E06E00974508 /* SignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		5F7002A91E25E06E00974508 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		5F7002AC1E25E11A00974508 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F7002AE1E25E4C800974508 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		5F7002B01E25E7FD00974508 /* SignInTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInTextFields.swift; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		5FBCA2B11E25CA5900DACC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FBCA2B31E25CA5900DACC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC866001E26B22000385330 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		5FC866021E26C6BB00385330 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		AD08016D0636DD02FCD715DD /* Pods-devslopes-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,10 +120,11 @@
 		5FFE16E41E25CC8900C8DEB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5F7002A91E25E06E00974508 /* SignInHeaderView.swift */,
+				5F7002A91E25E06E00974508 /* ShadowView.swift */,
 				5F7002AE1E25E4C800974508 /* RoundButton.swift */,
 				5F7002B01E25E7FD00974508 /* SignInTextFields.swift */,
 				5F7002B21E25E8DF00974508 /* SignInButton.swift */,
+				5FC866021E26C6BB00385330 /* RoundImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -276,11 +279,12 @@
 				5F7002B31E25E8DF00974508 /* SignInButton.swift in Sources */,
 				5FC866011E26B22000385330 /* FeedVC.swift in Sources */,
 				5FBCA2AA1E25CA5900DACC37 /* SignInVC.swift in Sources */,
-				5F7002AA1E25E06E00974508 /* SignInHeaderView.swift in Sources */,
+				5F7002AA1E25E06E00974508 /* ShadowView.swift in Sources */,
 				5F7002AF1E25E4C800974508 /* RoundButton.swift in Sources */,
 				5F7002B11E25E7FD00974508 /* SignInTextFields.swift in Sources */,
 				5FBCA2A81E25CA5900DACC37 /* AppDelegate.swift in Sources */,
 				5F7002AD1E25E11A00974508 /* Constants.swift in Sources */,
+				5FC866031E26C6BB00385330 /* RoundImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

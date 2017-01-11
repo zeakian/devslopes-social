@@ -1,5 +1,5 @@
 //
-//  SignInHeaderView.swift
+//  ShadowView.swift
 //  devslopes-social
 //
 //  Created by zeakian on 1/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInHeaderView: UIView {
+class ShadowView: UIView {
     // Called when UI object is created from storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +18,8 @@ class SignInHeaderView: UIView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        
+        // Corner corner radius
+        layer.cornerRadius = 2.0
     }
 }
