@@ -19,6 +19,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     static var imageCache: NSCache<NSString, UIImage> = NSCache() // cache to hold post images
     
     var posts = [Post]()
+    var usersLikes = [String]()
     var imagePicker: UIImagePickerController!
     var imageSelected = false
     
@@ -32,21 +33,39 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Grab posts data (runs initially, and automatically triggered whenever posts database is updated)
-        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
-            
-            self.posts = [] // clear out posts array when we update so we don't get duplicates
-            
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let post = Post(postId: snap.key, postData: postDict)
-                        self.posts.append(post)
-                    }
+        // Load table view
+        // Grab user's likes from database so we can highlight posts they've already liked
+        DataService.ds.REF_CURRENT_USER.child("likes").observe(.value, with: { (likesData) in
+            self.usersLikes = []
+            if let retrievedLikes = likesData.children.allObjects as? [FIRDataSnapshot] {
+                for retrievedLike in retrievedLikes {
+                    self.usersLikes.append(retrievedLike.key)
                 }
             }
             
-            self.tableView.reloadData() // once data is downloaded from Firebase, reload tableview
+            // Grab all posts from database
+            DataService.ds.REF_POSTS.observe(.value, with: { (postsData) in
+                self.posts = [] // clear out posts array when we update so we don't get duplicates
+                
+                // Grab all posts from database
+                if let retrievedPosts = postsData.children.allObjects as? [FIRDataSnapshot] {
+                    // For each post
+                    for retrievedPost in retrievedPosts {
+                        // parse into dictionary
+                        if let postDict = retrievedPost.value as? Dictionary<String, AnyObject> {
+                            var post: Post!
+                            if self.usersLikes.contains(retrievedPost.key) {
+                                post = Post(postId: retrievedPost.key, postData: postDict, userLikes: true)
+                                self.posts.append(post)
+                            } else {
+                                post = Post(postId: retrievedPost.key, postData: postDict, userLikes: false)
+                                self.posts.append(post)
+                            }
+                        }
+                    }
+                }
+                self.tableView.reloadData()
+            })
         })
     }
 

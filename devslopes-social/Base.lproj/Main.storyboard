@@ -333,6 +333,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionTextView" destination="AE2-X5-6jZ" id="CBC-i0-Dzl"/>
+                                            <outlet property="likeImageView" destination="4Da-WD-g88" id="eYR-lJ-Tgk"/>
                                             <outlet property="likesLabel" destination="1HU-LL-qrn" id="ndu-Xh-wZ7"/>
                                             <outlet property="postImageView" destination="rHF-Qo-6re" id="aI4-kA-Mrd"/>
                                             <outlet property="profileImageView" destination="y9t-jn-0fi" id="feQ-Pr-mfI"/>
