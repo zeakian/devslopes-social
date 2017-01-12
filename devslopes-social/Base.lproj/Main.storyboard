@@ -194,13 +194,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="76z-k7-Mtg">
                                         <rect key="frame" x="8" y="8" width="327" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="vAS-h3-DbZ" customClass="RoundImageView" customModule="devslopes_social" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="vAS-h3-DbZ" customClass="RoundImageView" customModule="devslopes_social" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="PE5-1q-aTX"/>
                                                     <constraint firstAttribute="width" constant="49" id="yqK-g7-pd8"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="qz0-RS-Uc0" appends="YES" id="w6X-xh-kde"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="add post..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-fZ-oFw" customClass="SignInTextFields" customModule="devslopes_social" customModuleProvider="target">
                                                 <rect key="frame" x="59" y="0.0" width="209" height="49"/>
@@ -216,6 +220,9 @@
                                                     <constraint firstAttribute="height" constant="49" id="olX-8C-QpL"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postButtonTapped:" destination="s4j-14-bFv" eventType="touchUpInside" id="6Nx-Np-n5b"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -350,6 +357,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="c9T-fZ-oFw" id="fDi-NJ-YoW"/>
+                        <outlet property="imageButtonImage" destination="vAS-h3-DbZ" id="0EZ-e1-jdB"/>
                         <outlet property="tableView" destination="w9F-Jd-QbS" id="K0M-AU-HXZ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showSignInVC" id="8Sy-GW-KzV"/>
                     </connections>
@@ -358,6 +367,11 @@
                 <tapGestureRecognizer id="RUE-zZ-XCQ">
                     <connections>
                         <action selector="signOutImageTapped" destination="s4j-14-bFv" id="swc-yP-i6c"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qz0-RS-Uc0">
+                    <connections>
+                        <action selector="imageButtonImageTapped:" destination="s4j-14-bFv" id="Pgh-v7-Fvo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
