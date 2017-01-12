@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Config Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
  
+        // Config initial view controller (if user is already signed in, show FeedVC, else show sign in screen)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var initialViewController: UIViewController!
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "FeedVC")
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "SignInVC")
+        }
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

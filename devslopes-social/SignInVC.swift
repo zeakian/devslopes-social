@@ -24,10 +24,10 @@ class SignInVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         // If user has login details in keychain, auto-login and segue to Feed (must be called in viewDidAppear, as viewDidLoad is too early to call segues)
-        // When user opens app, they see the SignInVC for a split second before being segued to FeedVC. Possible to just show FeedVC directly by setting to initial VC?
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: "showFeedVC", sender: nil)
-        }
+        // When user opens app, they see the SignInVC for a split second before being segued to FeedVC. Possible to just show FeedVC directly by setting to initial VC? - Yes, now doing this in appdelegate
+//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+//            performSegue(withIdentifier: "showFeedVC", sender: nil)
+//        }
     }
     
     // Authenticate with Facebook when FB button is tapped
